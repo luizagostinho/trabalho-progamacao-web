@@ -1,26 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
     background-color: #0d0b13;
     color: #333;
     line-height: 1.6;
+    padding-top: 140px;
 }
 
 nav {
-    background-image: linear-gradient(to right, #3f00eb, hsl(255, 40%, 15%));
-    color: #fff;
-    padding: 50px;
-    width: 100%;
+    position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-image: linear-gradient(to right, #3f00eb, hsl(255, 40%, 15%));
+      color: white;
+      padding: 35px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 1000;
 }
 
 nav, ul, li {
     list-style: none;
-    display: inline-flex;
+    display: flex;
     gap: 20px;
     justify-content: center;;
 }
@@ -52,7 +67,7 @@ section {
     margin: 0 auto;
     padding: 10px;
 }
-img {
+section img {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     float: left;
@@ -62,18 +77,65 @@ img {
 
 p {
     text-align: justify;
-    margin: 20px 0;
+    margin: 0 auto;
     color: rgba(255, 255, 255, 0.836);
+    max-width: 400px;
 }
 
 
 
-.cursos, li {
+.cursos li{
     color: #fff;
     justify-content: justify;
     display: block;
-    padding-left: 25px;
+    padding: 25px;;
     margin: 10px 0;
+    align-items: center;
+    margin: auto;
+    
+}
+
+.projetos, a {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.projetos img {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 45%;
+}
+
+.projetos li a:hover {
+    color: #ffd900;
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        height: 300px;
+    }
+
+    body {
+        padding-top: 320px;
+    }
+
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        flex-direction: column;
+        text-align: center;
+    }
+    img {
+        margin: 0 auto 20px auto;
+    }
     
 }
 

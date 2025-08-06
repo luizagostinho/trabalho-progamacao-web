@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio pessoal </title>
     <link rel="stylesheet" href="trabalho.css">
+    
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">Sobre mim</a></li>
-            <li><a href="#">Formações</a></li>
-            <li><a href="#">Meus projetos</a></li>
-            <li><a href="#">Contatos</a></li>
+            <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#formacoes">Formações</a></li>
+            <li><a href="#projetos">Meus projetos</a></li>
+            <li><a href="#contatos">Contatos</a></li>
         </ul>
     </nav>
 
-    <h1>Sobre mim:</h1>
+    <h1 id="sobre">Sobre mim:</h1>
 
     <section>
         <img src="imagens/1745972225812.jpg" alt="foto de perfil" width="200">
@@ -25,22 +26,31 @@
         </p>
     </section>
 
-    <h1 class="cursos">Formações:</h1>
-    <ul>
+    <h1 id="formacoes">Formações:</h1>
+    <ul class="cursos">
         <li>Ensino médio completo</li>
         <li>Curso Fundamentos de HTML, CSS e JavaScript - <strong>Udemy</strong></li>
         <li>Analise e Desenvolvimento de Sistemas - <strong>Uninter</strong></li>
         <li>Lógica de Progamação com JavaScript - <strong>Alura</strong></li>
     </ul>
 
-    <h1>Meus projetos:</h1>
-    <ul>
-        <li><a href="#">Projeto Cordel</a></li>
-        <li><a href="#">Projeto Android</a></li>
-        <li><a href="#">Projeto Calculadora de IMC</a></li>
+    <h1 id="projetos">Meus projetos:</h1>
+    <ul class="projetos">
+        <li>
+            <a href="https://luizagostinho.github.io/projeto-cordel/" target="_blank">Projeto Cordel</a> 
+            <img src="imagens/Captura de tela 2025-08-05 213618.png" alt="Projeto Cordel" width="200">
+        </li>
+        <li>
+            <a href="https://luizagostinho.github.io/projeto.android/" target="_blank">Projeto Android</a>
+            <img src="imagens/Captura de tela 2025-08-05 213635.png" alt="Projeto Android" width="200">
+        </li>
+        <li>
+            <a href="https://luizagostinho.github.io/calculadora-imc/" target="_blank">Projeto Calculadora de IMC</a>
+            <img src="imagens/Captura de tela 2025-08-05 213542.png" alt="Projeto Calculadora de IMC" width="200">
+        </li>
     </ul>
 
-    <h1>Contatos:</h1>
+    <h1 id="contatos">Contatos:</h1>
 
     <form>
 
@@ -54,6 +64,36 @@
                 Mensagem: <textarea placeholder="Digite uma mensagem..." required></textarea>
             </label>
     </form>
+
+    <script>
+  // Espera o DOM carregar
+  document.addEventListener("DOMContentLoaded", function () {
+    // Seleciona todos os links que começam com #
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          // Calcula a posição para centralizar a seção no meio da tela
+          const offset = target.offsetTop;
+          const height = target.offsetHeight;
+          const windowHeight = window.innerHeight;
+
+          const scrollTo = offset - (windowHeight / 2) + (height / 2);
+
+          window.scrollTo({
+            top: scrollTo,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  });
+</script>
+
 
 
 </body>
