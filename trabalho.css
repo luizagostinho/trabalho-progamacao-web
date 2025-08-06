@@ -3,7 +3,7 @@
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', Arial, sans-serif;
 }
@@ -31,6 +31,7 @@ nav {
       display: flex;
       justify-content: space-around;
       z-index: 1000;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26);
 }
 
 nav, ul, li {
@@ -61,12 +62,14 @@ h1 {
     background-color: #0d0b13;
     background-image: linear-gradient(to right, #3f00eb, hsl(255, 40%, 15%));
 }
+
 section {
     display: flex;
     align-items: center;
     margin: 0 auto;
     padding: 10px;
 }
+
 section img {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -82,8 +85,6 @@ p {
     max-width: 400px;
 }
 
-
-
 .cursos li{
     color: #fff;
     justify-content: justify;
@@ -92,7 +93,6 @@ p {
     margin: 10px 0;
     align-items: center;
     margin: auto;
-    
 }
 
 .projetos, a {
@@ -113,20 +113,27 @@ p {
     text-decoration: underline;
 }
 
-
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.836);
+    max-width: 400px;
+    margin: 10px auto;
+    padding-bottom: 20px;
+}
 
 @media screen and (max-width: 768px) {
     nav {
-        height: 300px;
+        height: 100px;
     }
 
     body {
-        padding-top: 320px;
+        padding-top: 120px;
     }
 
     
     nav ul {
-        flex-direction: column;
+        flex-direction: rows;
         align-items: center;
     }
     section {
