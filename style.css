@@ -118,12 +118,41 @@ p {
     display: flex;
     flex-direction: column;
     color: rgba(255, 255, 255, 0.836);
+    background-color: #9c97a7;
+    border-radius: 5px;
+    padding: 15px;
     max-width: 400px;
     margin: 10px auto;
     padding-bottom: 20px;
 }
 
-@media screen and (max-width: 800px) {
+label input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+label textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+    height: 80px;
+}
+
+label input[type="submit"] {
+    background-color: #3f00eb;
+    color: #fff;
+    cursor: pointer;
+    
+}
+
+@media screen and (max-width: 800px) {   /* decici incluir uma media query para telas menores, para testar um pouco mais oque sei sobre responsividade */
     nav {
         height: 100px;
     }
@@ -142,8 +171,13 @@ p {
         flex-direction: column;
         text-align: center;
     }
-    img {
-        margin: 0 auto 20px auto;
+    
+    .cursos li {
+        padding: 15px;
+        margin: 5px 0;
+        max-width: 300px;
+        text-align: center;
+        display: inline-block;
     }
 
     img {
